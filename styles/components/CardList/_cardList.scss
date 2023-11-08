@@ -1,0 +1,20 @@
+@use "/styles/shared/global";
+
+.container {
+  // background-color: global.$color-grey-20;
+}
+.content {
+  display: grid;
+  gap: global.rem(32);
+}
+
+.heading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    text-align: left;
+    width: 100%;
+  }
+}

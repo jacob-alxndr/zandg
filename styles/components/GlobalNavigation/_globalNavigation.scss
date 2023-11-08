@@ -1,0 +1,40 @@
+@use "/styles/shared/global";
+
+.header {
+  width: 100%;
+  z-index: global.$zIndex-4--nav;
+  position: relative;
+  opacity: 0;
+}
+.nav {
+  padding: global.rem(72) 0;
+  width: 100%;
+  @include global.mq("phablet") {
+    padding: global.rem(16) 0;
+  }
+  &Content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .iconLogo {
+      display: block;
+      @include global.fontSize(64, 64);
+      @include global.mq("phablet") {
+        @include global.fontSize(48, 48);
+      }
+    }
+    .iconAbout {
+      display: block;
+      @include global.fontSize(24, 24);
+      body:not(.is-touch) & {
+        &:hover {
+          @include global.animate(shake, 2s, infinite, normal);
+        }
+      }
+      @include global.mq("phablet") {
+        @include global.fontSize(20, 20);
+      }
+    }
+  }
+}

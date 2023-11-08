@@ -1,0 +1,177 @@
+@use "./mixins.scss";
+@use "./colors.scss";
+@use "./variables.scss";
+
+@mixin font-rendering {
+  /*-webkit-backface-visibility: hidden;*/
+  /*text-rendering: optimizeLegibility; Causing weird line break issues in Windows Chrome*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$font-primary: var(--font-primary), "IBM Plex Sans", "ibm plex sans";
+
+/* Font Family Mixins
+     - (N = normal | I = italic | 4 = normal font-weight | 7 = bold font-weight)
+========================================================================== */
+@mixin font-primaryN3 {
+  font-family: $font-primary;
+  font-weight: 300;
+  @include font-rendering;
+}
+@mixin font-primaryN4 {
+  font-family: $font-primary;
+  font-weight: 400;
+  @include font-rendering;
+}
+@mixin font-primaryN5 {
+  font-family: $font-primary;
+  font-weight: 500;
+  @include font-rendering;
+}
+@mixin font-primaryN6 {
+  font-family: $font-primary;
+  font-weight: 500;
+  @include font-rendering;
+}
+
+@mixin font-headingN5 {
+  font-family: $font-primary;
+  font-weight: 500;
+  @include font-rendering;
+}
+@mixin font-headingN6 {
+  font-family: $font-primary;
+  font-weight: 600;
+
+  @include font-rendering;
+}
+
+/* 
+  Body Scale
+  --------------------------------------------------
+*/
+%body--tiny {
+  @include mixins.fontSize(14, 20);
+  font-weight: 300;
+  font-family: $font-primary;
+}
+
+%body--small {
+  @include mixins.fontSize(16, 22);
+  font-weight: 400;
+  font-family: $font-primary;
+}
+
+%body--medium {
+  @include mixins.fontSize(20, 28);
+  font-weight: 300;
+  font-family: $font-primary;
+}
+
+%body--large {
+  @include mixins.fontSize(24, 32);
+  font-weight: 300;
+  font-family: $font-primary;
+}
+%body--xl {
+  @include mixins.fontSize(24, 36);
+  font-weight: 300;
+  font-family: $font-primary;
+}
+
+%subheading--small {
+  @include mixins.fontSize(16, 20, -1);
+  font-weight: 500;
+  font-family: $font-primary;
+}
+
+%subheading--medium {
+  @include mixins.fontSize(20, 24, -1);
+  font-weight: 500;
+  font-family: $font-primary;
+}
+%subheading--large {
+  @include mixins.fontSize(24, 30, -1);
+  font-weight: 500;
+  font-family: $font-primary;
+}
+
+/* 
+  Heading Scale
+  --------------------------------------------------
+*/
+%u-heading {
+  @include font-headingN6;
+}
+
+%u-heading-h1 {
+  text-transform: uppercase;
+  @include mixins.fontSize(
+    map_get(variables.$typography-size, "h1"),
+    map_get(variables.$typography-line-height, "h1"),
+    map_get(variables.$typography-letter-spacing, "h1")
+  );
+
+  @include mixins.mq("tablet") {
+    @include mixins.fontSize(
+      map_get(variables.$typography-size, "h2"),
+      map_get(variables.$typography-line-height, "h2")
+    );
+  }
+}
+
+%u-heading-h2 {
+  @include mixins.fontSize(
+    map_get(variables.$typography-size, "h2"),
+    map_get(variables.$typography-line-height, "h2")
+  );
+
+  @include mixins.mq("tablet") {
+    @include mixins.fontSize(
+      map_get(variables.$typography-size, "h3"),
+      map_get(variables.$typography-line-height, "h3")
+    );
+  }
+}
+
+%u-heading-h3 {
+  @include mixins.fontSize(
+    map_get(variables.$typography-size, "h3"),
+    map_get(variables.$typography-line-height, "h3")
+  );
+
+  @include mixins.mq("tablet") {
+    @include mixins.fontSize(
+      map_get(variables.$typography-size, "h4"),
+      map_get(variables.$typography-line-height, "h4")
+    );
+  }
+}
+
+%u-heading-h4 {
+  @include mixins.fontSize(
+    map_get(variables.$typography-size, "h4"),
+    map_get(variables.$typography-line-height, "h4")
+  );
+}
+%u-subheading-sh1 {
+  @include mixins.fontSize(
+    map_get(variables.$typography-size, "sh1"),
+    map_get(variables.$typography-line-height, "sh1")
+  );
+  font-weight: 500;
+}
+%u-subheading-sh2 {
+  @include mixins.fontSize(
+    map_get(variables.$typography-size, "sh2"),
+    map_get(variables.$typography-line-height, "sh2")
+  );
+  font-weight: 500;
+}
+%u-subheading-sh3 {
+  @include mixins.fontSize(
+    map_get(variables.$typography-size, "sh3"),
+    map_get(variables.$typography-line-height, "sh3")
+  );
+}

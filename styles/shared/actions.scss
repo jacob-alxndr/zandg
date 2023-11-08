@@ -1,0 +1,67 @@
+@use "sass:math";
+@use "./variables.scss";
+@use "./colors.scss";
+@use "./mixins.scss";
+@use "./typography";
+@use "./extends";
+
+%base {
+  @include mixins.fontSize(24, 30);
+  cursor: pointer;
+  display: inline-flex;
+  transition: 0.5s variables.$easing;
+  white-space: nowrap;
+
+  @include mixins.mq("phablet") {
+    @include mixins.fontSize(20, 22);
+  }
+}
+
+// Primary
+.c-button--primary {
+  @extend %base;
+  @include typography.font-headingN6;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  body:not(.is-touch) & {
+    &:hover {
+      color: colors.$color-black;
+    }
+  }
+}
+// Primary
+.c-button--secondary {
+  @extend %base;
+  @include typography.font-primaryN5;
+  border: 1px solid transparent;
+  text-decoration: underline;
+  body:not(.is-touch) & {
+    &:hover {
+      color: colors.$color-black;
+    }
+  }
+}
+// Anchor
+.c-button--anchor {
+  @extend %base;
+  align-items: center;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  width: 100%;
+  column-gap: mixins.rem(8);
+  svg {
+    transition: transform 0.3s ease;
+  }
+  a {
+    @include typography.font-headingN6;
+  }
+  body:not(.is-touch) & {
+    &:hover {
+      color: colors.$color-black;
+
+      svg {
+        transform: translateY(20%);
+      }
+    }
+  }
+}

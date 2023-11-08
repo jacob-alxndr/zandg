@@ -1,0 +1,87 @@
+@use "/styles/shared/global";
+.drawer {
+  overflow-y: scroll;
+  overscroll-behavior: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+  }
+}
+.header {
+  @include global.size(100%, global.rem(134));
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding: global.rem(80) 0 0;
+  position: absolute;
+  z-index: 2;
+  .iconClose {
+    @include global.fontSize(20, 30);
+    position: relative;
+    z-index: 1;
+  }
+  @include global.mq("phablet") {
+    @include global.size(100%, global.rem(80));
+    padding: global.rem(24) 0 0;
+  }
+}
+
+.content {
+  padding-top: global.rem(144);
+  color: global.$color-white;
+  position: relative;
+  z-index: 1;
+  @include global.mq("phablet") {
+    padding-top: global.rem(40);
+  }
+  &::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+  }
+  // Text content
+  .body__content__copy {
+    .columns {
+      display: flex;
+      gap: global.rem(48);
+
+      div {
+        flex: 1;
+        p {
+          @extend %body--medium;
+          color: global.$color-white;
+
+          @include global.mq("phablet") {
+            @include global.fontSize(16, 20);
+          }
+        }
+      }
+
+      @include global.mq("desktop") {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.drawerFooter {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: global.rem(24) 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  > * {
+    color: global.$color-white;
+    @include global.fontSize(20, 24);
+    @include global.mq("tablet-wide") {
+      @include global.fontSize(16, 20);
+    }
+  }
+
+  @include global.mq("tablet-wide") {
+    position: relative;
+  }
+}

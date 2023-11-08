@@ -1,0 +1,63 @@
+@use "/styles/shared/global";
+
+.container {
+  opacity: 0;
+  transform: translateY(64px);
+}
+.card {
+  overflow: hidden;
+  transition: transform 0.3s global.$easing, opacity 0.2s global.$easing;
+  border-top: 1px solid global.$color-black;
+  .content {
+    padding: global.rem(32) 0 global.rem(24);
+    display: flex;
+    @include global.mq("tablet-wide") {
+      padding: global.rem(24) 0;
+    }
+    .heading {
+      flex: 1;
+      .title {
+        margin-bottom: global.rem(8);
+      }
+      .subtitle {
+        color: global.$color-grey;
+        display: block;
+        margin-bottom: global.rem(16);
+      }
+    }
+    .description {
+      flex: 0.8;
+      @extend %body--medium;
+    }
+    @include global.mq("tablet-wide") {
+      flex-direction: column;
+    }
+  }
+  .media div {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    padding: 2px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      transition: transform 0.3s global.$easing;
+      opacity: 0.9;
+    }
+    img {
+      transition: transform 0.5s ease !important;
+    }
+    picture img {
+      transition: transform 0.5s global.$easing !important ;
+    }
+  }
+
+  body:not(.is-touch) & {
+    &:hover {
+      img {
+        transform: scale(1.02);
+      }
+    }
+  }
+}

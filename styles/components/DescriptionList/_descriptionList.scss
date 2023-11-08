@@ -1,0 +1,28 @@
+@use "/styles/shared/global";
+
+.container {
+  margin: 0;
+  padding: global.rem(24) 0 0;
+
+  .list {
+    &.columns {
+      display: flex;
+      column-gap: global.rem(32);
+      @include global.mq("tablet-wide") {
+        flex-direction: column;
+      }
+    }
+  }
+  dt {
+    color: global.$color-grey;
+    @include global.fontSize(20, 24);
+    font-weight: 300;
+    @include global.mq("tablet-wide") {
+      @include global.fontSize(18, 24);
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
