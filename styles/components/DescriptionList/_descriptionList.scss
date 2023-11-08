@@ -1,0 +1,22 @@
+@use "/styles/shared/global";
+
+.container {
+  margin: 0;
+  padding: global.rem(16) 0 0;
+  .listTitle {
+  }
+  .list {
+    &.columns {
+      display: flex;
+      column-gap: global.rem(32);
+    }
+  }
+
+  dt {
+    color: global.$color-grey;
+  }
+
+  p {
+    margin: 0;
+  }
+}

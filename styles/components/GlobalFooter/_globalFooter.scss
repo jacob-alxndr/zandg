@@ -1,0 +1,22 @@
+@use "/styles/shared/global";
+
+.container {
+  background-color: global.$color-black;
+  position: relative;
+  z-index: global.$zIndex-4--footer;
+  @include global.size(100%, auto);
+}
+.content {
+  justify-content: center;
+  display: flex;
+  padding: global.rem(24) 0;
+  margin: 0 auto;
+}
+
+.legal {
+  color: global.$color-white;
+  display: block;
+  @include global.mq("phone-wide") {
+    @include global.fontSize(12, 18);
+  }
+}

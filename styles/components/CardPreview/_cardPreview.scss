@@ -1,0 +1,57 @@
+@use "/styles/shared/global";
+
+.container {
+  opacity: 0;
+}
+.card {
+  overflow: hidden;
+  transition: transform 0.3s global.$easing, opacity 0.2s global.$easing;
+  padding-top: global.rem(32);
+  border-top: 1px solid global.$color-black;
+  .content {
+    padding: 2rem 0 1rem;
+    display: flex;
+    .heading {
+      flex: 1;
+      .subtitle {
+        color: global.$color-grey;
+        display: block;
+        margin-bottom: global.rem(16);
+      }
+    }
+    .description {
+      flex: 0.8;
+      @extend %body--medium;
+    }
+    @include global.mq("tablet-wide") {
+      flex-direction: column;
+    }
+  }
+  .media div {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    padding: 2px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      transition: transform 0.3s global.$easing;
+      opacity: 0.9;
+    }
+    img {
+      transition: transform 0.5s ease !important;
+    }
+    picture img {
+      transition: transform 0.5s global.$easing !important ;
+    }
+  }
+
+  body:not(.is-touch) & {
+    &:hover {
+      img {
+        transform: scale(1.02);
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "/styles/shared/global";
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  div {
+    height: 90vh !important;
+    width: 100% !important;
+  }
+  .caption {
+    p {
+      @extend %body--small;
+    }
+  }
+}

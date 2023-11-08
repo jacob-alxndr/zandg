@@ -1,0 +1,70 @@
+@use "./mixins.scss";
+
+$easing: cubic-bezier(0.46, 1, 0.1, 1);
+$overlayContentOpacity: 0.4;
+
+// Wire
+$component-padding-x: (
+  "desktop-xlg": 34.6666666667%,
+  "desktop-lg": 22.6666666667%,
+  "desktop": 10.6666666667%,
+  "tablet": 8.6666666667%,
+  "mobile": mixins.rem(24),
+);
+
+$component-padding-y: (
+  "xxs": mixins.rem(40),
+  "xs": mixins.rem(60),
+  "sm": mixins.rem(80),
+  "md": mixins.rem(160),
+  "lg": mixins.rem(180),
+  "xl": mixins.rem(200),
+  "xxl": mixins.rem(220),
+);
+
+$typography-size: (
+  "h1": 32,
+  "h2": 24,
+  "h3": 20,
+  "h4": 16,
+  "sh1": 20,
+  "sh2": 20,
+  "sh3": 20,
+);
+
+$typography-line-height: (
+  "h1": 40,
+  "h2": 30,
+  "h3": 24,
+  "h4": 20,
+  "sh1": 20,
+  "sh2": 20,
+  "sh3": 20,
+);
+
+$typography-letter-spacing: (
+  "h1": 0,
+  "h2": 0,
+  "h3": 0,
+  "h4": 0,
+  "sh1": 0,
+  "sh2": 0,
+  "sh3": 0,
+);
+
+$border-radius: (
+  "xxxs": mixins.rem(8),
+  "xxs": mixins.rem(16),
+  "xs": mixins.rem(20),
+  "sm": mixins.rem(24),
+  "md": mixins.rem(48),
+  "lg": mixins.rem(500),
+);
+
+$component-heading-maxwidth: (
+  "sm": mixins.rem(420),
+  "md": mixins.rem(640),
+  "lg": mixins.rem(820),
+  "xl": mixins.rem(1120),
+  "xxl": mixins.rem(1500),
+);

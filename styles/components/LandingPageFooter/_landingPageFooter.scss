@@ -1,0 +1,43 @@
+@use "/styles/shared/global";
+
+.container {
+  height: auto;
+}
+
+.textContent {
+  position: relative;
+  width: 100%;
+}
+
+.columns {
+  width: 100%;
+  display: flex;
+  gap: global.rem(48);
+  @include global.mq("tablet-wide") {
+    flex-direction: column;
+  }
+  div {
+    flex: 1;
+    p {
+      @extend %body--medium;
+    }
+  }
+}
+
+// Buttons content
+.buttonsWrapper {
+  .buttons {
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+.align--right {
+  display: flex;
+  justify-content: end;
+}
+.align--center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
