@@ -1,0 +1,59 @@
+@use "/styles/shared/global";
+
+.container {
+  height: auto;
+}
+.textContent {
+  position: relative;
+  width: 100%;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: global.rem(24);
+  }
+  p {
+    margin: 0;
+  }
+  .small {
+    max-width: global.rem(420);
+  }
+  .medium {
+    max-width: global.rem(592);
+  }
+}
+
+.columns {
+  width: 100%;
+  display: flex;
+  gap: global.rem(48);
+  div {
+    flex: 1;
+    p {
+      @extend %body--medium;
+    }
+  }
+  @include global.mq("tablet") {
+    flex-direction: column;
+  }
+}
+
+// Buttons content
+.buttons {
+  margin-top: global.rem(40);
+}
+
+.align--right {
+  display: flex;
+  justify-content: flex-end;
+  @include global.mq("tablet") {
+    justify-content: flex-start;
+  }
+}
+.align--center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

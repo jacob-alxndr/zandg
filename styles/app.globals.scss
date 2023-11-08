@@ -1,0 +1,155 @@
+@use "./shared/global";
+
+:root {
+}
+
+html,
+body {
+  height: auto;
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  scroll-behavior: smooth;
+  @include global.fontSize(16, 24);
+  @include global.font-primaryN4;
+}
+.layout {
+  position: relative;
+}
+.is-locked {
+  overscroll-behavior: none;
+  position: fixed;
+}
+
+::selection {
+  background: global.$color-black; /* WebKit/Blink Browsers */
+  color: global.$color-white; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: global.$color-black; /* Gecko Browsers */
+  color: global.$color-white; /* Gecko Browsers */
+}
+
+html {
+  overflow-x: hidden;
+}
+
+audio {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  color: global.$color-black;
+  @include global.font-primaryN3;
+  @extend %body--large;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+// SVG Icons
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  overflow: visible;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %u-heading;
+  margin: 0;
+}
+.u-heading--h1,
+h1 {
+  @extend %u-heading-h1;
+  @extend %u-heading;
+}
+
+.u-heading--h2,
+h2 {
+  @extend %u-heading-h2;
+  @extend %u-heading;
+}
+
+.u-heading--h3,
+h3 {
+  @extend %u-heading;
+  @extend %u-heading-h3;
+}
+
+.u-heading--h4,
+h4 {
+  @extend %u-heading;
+  @extend %u-heading-h4;
+}
+.u-subheading--sh1,
+h5 {
+  @extend %u-subheading-sh1;
+}
+.u-subheading--sh2,
+h6 {
+  @extend %u-subheading-sh2;
+}
+.u-subheading--sh3,
+h7 {
+  @extend %u-subheading-sh3;
+}
+
+// Text Heading Content Width Sizes
+.u-heading-width--small {
+  @extend %u-heading-width-small;
+}
+.u-heading-width--medium {
+  @extend %u-heading-width-medium;
+}
+.u-heading-width--large {
+  @extend %u-heading-width-large;
+}
+.u-heading-width--extra-large {
+  @extend %u-heading-width-xl;
+}
+.u-heading-width--extra-extra-large {
+  @extend %u-heading-width-xxl;
+}
+
+// Icons
+.icon-arrow-down {
+  @include global.fontSize(24, 24);
+}
